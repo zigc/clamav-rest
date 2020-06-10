@@ -1,8 +1,18 @@
-Clamav-rest [ClamAV](http://www.clamav.net/) REST proxy. Builds on top of clamav-java which is a minimal Java client for ClamAV.
+## Description
 
-Freshclam update virus databases every 2h.
+Clamav-rest [ClamAV](http://www.clamav.net/) with REST proxy service. 
+
+ClamAV daemon and REST service as a Docker image.  
+It *builds* with a current virus database and *runs* freshclam to update virus databases every 2h.  
+`clamd` itself is listening on exposed port `3310`
+
+REST service is exposed on port `8080`.
+
+Builds on top of clamav-java which is a minimal Java client for ClamAV.
 
 # Usage
+
+Docker hub https://hub.docker.com/r/zigac/clamav-rest
 
 ```bash
     docker run --name clamav-rest -d -p 8080:8080 zigac/clamav-rest
@@ -45,7 +55,7 @@ Clamd protocol contains command such as shutdown so exposing clamd directly to e
 
 ### Development
 
-You have two options. You can use [Docker](https://www.docker.com/) and run a Docker imageto test it. The Docker image is based on the supplied [Dockerfile specification](https://github.com/solita/clamav-rest/blob/master/Dockerfile).
+You have two options. You can use [Docker](https://www.docker.com/) and run a Docker image to test it. 
 
 Or you can build the JAR. This creates a stand-alone JAR with embedded [Jetty serlet container](http://www.eclipse.org/jetty/).
 
@@ -58,9 +68,3 @@ Starting the REST service is quite straightforward.
 ```
   java -jar clamav-rest-1.0.2.jar --server.port=8765 --clamd.host=myprecious.clamd.serv.er --clamd.port=3310
 ```
-
-## Description
-ClamAV daemon as a Docker image. It *builds* with a current virus database and
-*runs* `freshclam` in the background constantly updating the virus signature database. `clamd` itself
-is listening on exposed port `3310`.
-
