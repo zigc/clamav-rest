@@ -63,8 +63,8 @@ Or you can build the JAR. This creates a stand-alone JAR with embedded [Jetty se
   mvn package
 ```
 
-Starting the REST service is quite straightforward.
+Starting the REST service.
 
 ```
-  java -jar clamav-rest-1.0.2.jar --server.port=8765 --clamd.host=myprecious.clamd.serv.er --clamd.port=3310
+  java -jar clamav-rest-1.0.2.jar --server.port=8080 --clamd.host=127.0.0.1 --clamd.port=3310
 ```
