@@ -5,7 +5,7 @@ Freshclam update virus databases every 2h.
 # Usage
 
 ```bash
-    docker run --name clamav-rest -d -p 8080:8080 zigc/clamav-rest
+    docker run --name clamav-rest -d -p 8080:8080 zigac/clamav-rest
 ```
 
 ## Testing the REST service
