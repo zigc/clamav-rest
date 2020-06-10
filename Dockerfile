@@ -23,7 +23,7 @@ RUN echo "deb http://http.debian.net/debian/ $DEBIAN_VERSION main contrib non-fr
         clamav-freshclam \
         libclamunrar9 \
         wget \
-        default-jdk && \
+        default-jre && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
