@@ -71,6 +71,6 @@ WORKDIR /var/clamav-rest/
 # Open up the server
 EXPOSE 8080
 
-HEALTHCHECK CMD curl -f -k http://localhost:8080/ping || exit 1
+HEALTHCHECK CMD curl -s -f -k http://localhost:8080/ping || exit 1
 
 CMD ["/bootstrap.sh"]
